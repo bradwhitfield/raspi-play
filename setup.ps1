@@ -21,11 +21,11 @@ New-SSHSession -ComputerName $piHostname -Credential $piCredentials
 New-SFTPSession -ComputerName $piHostname -Credential $piCredentials
 
 Write-Host "
-  # Now you can run the following
-  go build main.go
-  Set-SFTPFile 0 main /home/pi/ -Overwrite
-  $pi = New-SSHShellStream -Index 0
-  $pi.WriteLine("./main")
-  $pi.Read()
-  # $pi.close() when you want to "^c"
+# Now you can run the following
+go build main.go
+Set-SFTPFile 0 main /home/pi/ -Overwrite
+`$pi = New-SSHShellStream -Index 0
+`$pi.WriteLine(`"./main`")
+`$pi.Read()
+# `$pi.close() when you want to `"^c`"
 "
